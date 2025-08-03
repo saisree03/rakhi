@@ -1,0 +1,103 @@
+    #container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+             gap: 10px;
+            padding: 20px;
+         }
+ img {
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(241, 82, 175, 0.2);
+            display: inline-block;
+        }
+ body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+h1 {
+            color: #f152af;
+            text-align: center;
+            margin-top: 20px;
+            font-family: cursive;
+        }
+#p{
+            text-align: center;
+            font-size: 20px;
+            color: #f152af;
+            font-family: cursive;
+        }
+p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 800px;
+            color: #555;
+            text-align: justify;
+        }
+ #i1, #i2, #i3, #i4, #i5, #i6 ,#i7{
+            border: 2px solid #f152af;
+            
+        }
+@keyframes slideImage {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(1000px); /* Adjust distance as needed */
+    }
+}
+
+#i1,#i3,#i6{
+    animation: slideImage 10s infinite alternate;
+}
+@keyframes slideImageLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-1000px); /* Move left */
+    }
+}
+
+#i2,#i5,#i7 {
+    animation: slideImageLeft 10s infinite alternate;
+}
+#bg-text {
+    position: absolute;
+    top: 100px; /* Adjust based on layout */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    z-index: 0; /* behind everything */
+    display: none;
+    opacity: 0.4;
+    font-size: 20px;
+    font-family: cursive;
+    color: #f152af;
+    background-color: transparent;
+    text-align: center;
+    pointer-events: none; /* make sure it's not clickable */
+}
+#i4:hover ~ #bg-text,
+#bg-text.active {
+    display: block;
+}
+#container img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+#container img:hover {
+  transform: scale(1.05);
+}
